@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.PaymentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+             <RadioButton
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Visa Payment"
+                 android:id="@+id/rbtnVisaPayment"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cash On Delivery"
+                android:id="@+id/rbtnCashOnDelivery"/>
+        </RadioGroup>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rl_card_payment">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:id="@+id/card_textLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Card No."
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:id="@+id/card_textInput"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_payment"
+                android:layout_below="@+id/card_textLayout"
+                android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="0.6"
+                android:id="@+id/expire_textLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Expiry Date"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:id="@+id/expire_textInput"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.4"
+                    android:id="@+id/ccv_textLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="CCV"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:id="@+id/ccv_textInput"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_payment"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnMkPayment"
+                android:text="Make Payment"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
